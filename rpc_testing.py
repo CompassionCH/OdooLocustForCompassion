@@ -25,7 +25,9 @@ def _(environment, **kw):
 
 class RPC(OdooLocustUser):
     wait_time = between(5, 10)
-
+    # uncomment for testing over https
+    # port = 443
+    # protocol = "jsonrpcs"
 
     def on_start(self):
         if ":" in self.host:
@@ -33,7 +35,7 @@ class RPC(OdooLocustUser):
         
         self.login = LOGIN or self.login 
         self.password = PASSWORD or self.password 
-        self.database = DATABASE or self.database 
+        self.database = DATABASE or self.database
 
         return super().on_start()
 

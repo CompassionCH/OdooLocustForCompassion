@@ -7,7 +7,7 @@ class HTTP(HttpUser):
     @task(3)
     def muskathlon(self):
         self.client.get(f"http://{self.host}/event/muskathlon-kilimanjaro-june-2022-2673/") 
-    
+
     @task(7)
     def together_homepage(self):
         self.client.get(f"http://together.{self.host}/homepage")
